@@ -121,6 +121,14 @@ export default {
         }
     },
     methods: {
+      initForm(){
+        this.question = ''
+        this.select = 'Один верный'
+        this.correctAnswersList = []
+        this.correctAnswer = 1
+        this.idCount = 5
+        this.answers.forEach(a => a.text = '')
+      },
       questionClear () {
         this.question = ''
       },             
@@ -152,6 +160,7 @@ export default {
           answers
         }
         console.log(JSON.stringify(quiz))
+        this.initForm()
       }
     },  
     computed: {
